@@ -1,0 +1,66 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Image_Text_Extraction___MAUI.MainPage"
+             BackgroundColor="White"
+             Title="Image Text Extraction .Net8 - Eng Mage Ali">
+    <Grid Padding="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Instruction Label -->
+        <Label Grid.Row="0" Grid.ColumnSpan="2" Text="For best results, please choose an image with clear text.. Senior .Net Software Engineer Maged Ali"
+               FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Italic"/>
+
+        <!-- Picture Box (Image) -->
+        <Image x:Name="selectedImage" Grid.Row="1" Grid.ColumnSpan="2" Aspect="AspectFit" BackgroundColor="LightGray"
+               HeightRequest="200" />
+
+        <!-- Select Image Button -->
+        <Button x:Name="btnSelectImage" Grid.Row="2" Grid.Column="0" Text="Select Image" Clicked="btnSelectImage_Click"
+                BackgroundColor="#624E88" TextColor="White" HeightRequest="50" FontSize="18"
+                CornerRadius="20" Padding="10" Margin="10"/>
+
+        <!-- Extract Text Button -->
+        <Button x:Name="btnExtractText" Grid.Row="2" Grid.Column="1" Text="Extract Text" Clicked="btnExtractText_Click"
+                BackgroundColor="#624E88" TextColor="White" HeightRequest="50" FontSize="18"
+                CornerRadius="20" Padding="10" Margin="10"/>
+
+        <!-- Rich Text Box -->
+        <Editor x:Name="richTextBox1" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="WhiteSmoke"
+                HeightRequest="150" IsReadOnly="True" FontSize="16" />
+
+        <!-- Copy Text Button -->
+        <Button x:Name="button1" Grid.Row="4" Grid.ColumnSpan="2" Text="Copy Text" Clicked="button1_Click"
+                BackgroundColor="#624E88" TextColor="White" HeightRequest="50" FontSize="18"
+                CornerRadius="20" Padding="10" Margin="10"/>
+
+        <!-- Language ComboBox -->
+        <Picker x:Name="languagePicker" Grid.Row="5" Grid.ColumnSpan="2" Title="Select Language" SelectedIndexChanged="languagePicker_SelectedIndexChanged"
+                BackgroundColor="WhiteSmoke" FontSize="16" Margin="10">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>English</x:String>
+                    <x:String>Arabic</x:String>
+                    <x:String>French</x:String>
+                    <x:String>Spanish</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Loading Label -->
+        <Label x:Name="loadingLabel" Grid.Row="6" Grid.ColumnSpan="2" Text="Loading..." FontSize="20"
+               HorizontalOptions="Center" VerticalOptions="Center" TextColor="#624E88" IsVisible="False"/>
+    </Grid>
+</ContentPage>
